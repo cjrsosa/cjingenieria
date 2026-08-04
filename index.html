@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJ Ingeniería y Diseño Mecánico | Tu Departamento de Ingeniería</title>
+    <meta name="description" content="CJ Ingeniería y Diseño Mecánico – Tu departamento de ingeniería sin contratar un ingeniero. Soluciones técnicas y económicas para PyMEs en Córdoba, Argentina.">
+    <meta name="keywords" content="ingeniería mecánica, diseño mecánico, PyME, Córdoba, Argentina, CAD, simulación, ingeniería inversa">
+    <meta name="author" content="Ing. Carlos J. Sosa">
+    <!-- Open Graph -->
+    <meta property="og:title" content="CJ Ingeniería y Diseño Mecánico">
+    <meta property="og:description" content="Tu departamento de ingeniería externo, flexible y profesional para PyMEs.">
+    <meta property="og:type" content="website">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo logo--custom">
+                <div class="logo-monogram-wrap">
+                    <img src="logo_cj_monogram.png" alt="CJ Monograma" class="logo-monogram">
+                </div>
+                <div class="logo-text-wrap">
+                    <span class="logo-line-1">INGENIERÍA Y</span>
+                    <span class="logo-line-2">DISEÑO MECÁNICO</span>
+                    <div class="logo-text-sep"></div>
+                    <span class="logo-line-3">ESTUDIO DE DISEÑO MECÁNICO</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#filosofia" class="nav-link">Filosofía</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#beneficios" class="nav-link">Beneficios</a>
+                <a href="#planes" class="nav-link">Planes</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#contacto" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Contactar
+                </a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ====== HERO ====== -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-accent-1"></div>
+        <div class="hero-accent-2"></div>
+        <div class="container hero-content">
+            <div class="hero-text" data-animate="fade-left">
+                <div class="hero-badge">
+                    <i class="fas fa-cog fa-spin"></i>
+                    Estudio de Diseño Mecánico · San Francisco, Córdoba
+                </div>
+                <h1>
+                    TU DEPARTAMENTO<br>
+                    DE INGENIERÍA,<br>
+                    <span class="hero-red-line">SIN TENER QUE<br>CONTRATAR UN INGENIERO.</span>
+                </h1>
+                <p class="hero-desc">
+                    Brindamos asesoramiento y soluciones de ingeniería a PyMEs y Micro PyMEs que necesitan
+                    respuestas rápidas, confiables y profesionales — exactamente cuando lo necesitan.
+                </p>
+                <div class="hero-pills">
+                    <span><i class="fas fa-handshake"></i> Experiencia y Confiabilidad</span>
+                    <span><i class="fas fa-cogs"></i> Soluciones a Medida</span>
+                    <span><i class="fas fa-clock"></i> Flexibilidad de Horarios</span>
+                    <span><i class="fas fa-bullseye"></i> Enfoque en Resultados</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#planes" class="btn-hero-primary">
+                        Ver Planes <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contacto" class="btn-hero-outline">
+                        <i class="fab fa-whatsapp"></i> Escribinos
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-animate="fade-right">
+                <div class="hero-card-floating">
+                    <div class="hero-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Aliado Estratégico</strong>
+                            <span>Para tu empresa</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Disponible</strong>
+                            <span>Cuando lo necesitás</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <strong>Sin Costos Fijos</strong>
+                            <span>Pagás solo lo que usás</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                     alt="Ingeniería mecánica de precisión" class="hero-img">
+                <div class="hero-img-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Precisión &amp; Calidad</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Conocé más</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <div class="stats-bar">
+        <div class="container stats-container">
+            <div class="stat-item" data-animate="fade-up">
+                <i class="fas fa-building"></i>
+                <div>
+                    <strong>PyMEs &amp; Micro PyMEs</strong>
+                    <span>Nuestro foco principal</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" style="animation-delay:0.1s">
+                <i class="fas fa-tools"></i>
+                <div>
+                    <strong>7 Especialidades</strong>
+                    <span>Servicios de ingeniería</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" style="animation-delay:0.2s">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>Planes Flexibles</strong>
+                    <span>Desde 4 h/mes</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" style="animation-delay:0.3s">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>San Francisco, Córdoba</strong>
+                    <span>Argentina</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== FILOSOFÍA ====== -->
+    <section id="filosofia" class="philosophy">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="philosophy-text" data-animate="fade-left">
+                    <div class="section-label">Nuestra Filosofía</div>
+                    <h2>La ingeniería debe ser una herramienta accesible para <em>todas</em> las empresas.</h2>
+                    <div class="section-divider"></div>
+                    <blockquote class="philosophy-quote">
+                        <i class="fas fa-quote-left"></i>
+                        "La ingeniería no debe ser un privilegio exclusivo de las grandes industrias, sino una herramienta
+                        accesible para todas las empresas que buscan crecer, mejorar su productividad y ser más competitivas."
+                    </blockquote>
+                    <p>
+                        En CJ Ingeniería trabajamos como un <strong>aliado estratégico</strong> para PyMEs y Micro PyMEs.
+                        Sabemos que muchas empresas necesitan apoyo técnico, pero no siempre es posible incorporar
+                        un ingeniero a tiempo completo.
+                    </p>
+                    <p>
+                        Por eso desarrollamos una modalidad de trabajo <strong>flexible y orientada a generar resultados
+                        concretos</strong> — tanto técnicos como económicos — adaptada a las necesidades reales de cada empresa.
+                    </p>
+                    <p>
+                        Con la misma filosofía de mejora continua que promovemos en nuestros clientes, incorporamos
+                        constantemente nuevas herramientas: actualmente también brindamos evaluación técnico-económica
+                        de proyectos de inversión y asesoramiento en gestión y finanzas empresariales.
+                    </p>
+                    <a href="#contacto" class="btn-primary">
+                        Coordinar una Reunión <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="philosophy-cards" data-animate="fade-right">
+                    <div class="philo-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Objetivo Claro</h4>
+                        <p>Ser el departamento de ingeniería de las PyMEs sin que necesiten contratar un ingeniero permanente.</p>
+                    </div>
+                    <div class="philo-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Aliado Estratégico</h4>
+                        <p>Nos involucramos en tus objetivos con un enfoque práctico y orientado a resultados concretos.</p>
+                    </div>
+                    <div class="philo-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Mejora Continua</h4>
+                        <p>Capacitación permanente e incorporación de nuevas herramientas técnicas y económicas.</p>
+                    </div>
+                    <div class="philo-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Visión Integral</h4>
+                        <p>No solo desafíos técnicos: también los económicos y financieros del mercado actual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SERVICIOS ====== -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <div class="section-label">Nuestros Servicios</div>
+                <h2>¿QUÉ PODEMOS HACER<br>POR TU EMPRESA?</h2>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">
+                    Desde el desarrollo de un producto hasta el análisis de su viabilidad económica —
+                    cubrimos todo el ciclo de vida de tu proyecto.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.05s">
+                    <div class="service-num">01</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Desarrollo de Producto</h3>
+                    <p>Diseño de productos y dispositivos desde el concepto inicial hasta el plano de fabricación final, listos para producción.</p>
+                    <div class="service-tags">
+                        <span>Diseño 3D</span><span>Prototipos</span><span>CAD</span>
+                    </div>
+                </div>
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.1s">
+                    <div class="service-num">02</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Selección de Materiales</h3>
+                    <p>Asesoramiento técnico para identificar el material y tratamiento térmico ideal según la aplicación y los costos.</p>
+                    <div class="service-tags">
+                        <span>Materiales</span><span>Tratamientos</span><span>Costos</span>
+                    </div>
+                </div>
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.15s">
+                    <div class="service-num">03</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Análisis y Simulación</h3>
+                    <p>Cálculos de resistencia, simulación de esfuerzos, deformaciones y análisis de elementos finitos (FEA).</p>
+                    <div class="service-tags">
+                        <span>FEA</span><span>Resistencia</span><span>Fatiga</span>
+                    </div>
+                </div>
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.2s">
+                    <div class="service-num">04</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Planos y Documentación</h3>
+                    <p>Planos de fabricación normatizados y documentación técnica completa para producción, compras y certificaciones.</p>
+                    <div class="service-tags">
+                        <span>Planos</span><span>Normas</span><span>Memoria</span>
+                    </div>
+                </div>
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.25s">
+                    <div class="service-num">05</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Ingeniería Inversa</h3>
+                    <p>Relevamiento, medición y rediseño de piezas existentes para optimizar, reponer o mejorar componentes fuera de producción.</p>
+                    <div class="service-tags">
+                        <span>Relevamiento</span><span>Optimización</span><span>Réplica</span>
+                    </div>
+                </div>
+                <div class="service-card" data-animate="fade-up" style="animation-delay:0.3s">
+                    <div class="service-num">06</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Ingeniería de Producción</h3>
+                    <p>Mejora de procesos de fabricación, diseño de utillajes, soporte técnico a compras y asesoramiento a proveedores.</p>
+                    <div class="service-tags">
+                        <span>Procesos</span><span>Utillajes</span><span>Proveedores</span>
+                    </div>
+                </div>
+                <div class="service-card service-card--highlight" data-animate="fade-up" style="animation-delay:0.35s">
+                    <div class="service-badge-new">Nuevo</div>
+                    <div class="service-num">07</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Evaluación Técnico-Económica</h3>
+                    <p>Análisis de factibilidad de proyectos de inversión, estimación de impacto económico y respaldo financiero para la toma de decisiones estratégicas.</p>
+                    <div class="service-tags">
+                        <span>Factibilidad</span><span>Inversión</span><span>Finanzas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BENEFICIOS ====== -->
+    <section id="beneficios" class="benefits">
+        <div class="benefits-bg"></div>
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <div class="section-label light">¿Por qué elegirnos?</div>
+                <h2>LAS VENTAJAS DE TENER<br>UN INGENIERO A TU LADO</h2>
+                <div class="section-divider center light"></div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.05s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h4>Reducí Costos</h4>
+                    <p>Sin sueldos fijos, cargas sociales ni beneficios. Pagás solo las horas que efectivamente necesitás.</p>
+                    <div class="benefit-number">01</div>
+                </div>
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.1s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Mayor Eficiencia</h4>
+                    <p>Soluciones técnicas especializadas que optimizan tus procesos, mejoran la calidad y aumentan la productividad.</p>
+                    <div class="benefit-number">02</div>
+                </div>
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.15s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Rapidez y Flexibilidad</h4>
+                    <p>Tenés un ingeniero disponible cuando lo necesitás, con horarios flexibles adaptados al ritmo de tu empresa.</p>
+                    <div class="benefit-number">03</div>
+                </div>
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.2s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h4>Como Parte de tu Equipo</h4>
+                    <p>Nos involucramos en tus objetivos, conocemos tu empresa y trabajamos como un verdadero aliado estratégico.</p>
+                    <div class="benefit-number">04</div>
+                </div>
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.25s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4>Hacé Crecer tu Empresa</h4>
+                    <p>Más innovación, mejor calidad y mayor productividad. La ingeniería como motor de crecimiento para tu negocio.</p>
+                    <div class="benefit-number">05</div>
+                </div>
+                <div class="benefit-card" data-animate="fade-up" style="animation-delay:0.3s">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Respaldo Profesional</h4>
+                    <p>Decisiones técnicas y económicas con sustento profesional. Informes, memorias de cálculo y documentación formal.</p>
+                    <div class="benefit-number">06</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PLANES ====== -->
+    <section id="planes" class="plans">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <div class="section-label">Precios</div>
+                <h2>PLANES DE INGENIERÍA</h2>
+                <p class="plans-subtitle-red">FLEXIBLES, CLAROS Y ADAPTADOS A TU EMPRESA</p>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">Elegí el plan que se adapta a tu ritmo. Sin contratos largos ni letra chica.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan Start -->
+                <div class="pricing-card" data-animate="fade-up" style="animation-delay:0.05s">
+                    <div class="pricing-header navy">
+                        <div class="plan-icon"><i class="fas fa-home"></i></div>
+                        <h3>PLAN START</h3>
+                        <div class="plan-hours">4<span>h / mes</span></div>
+                        <p>Pequeños talleres y emprendimientos</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="plan-features">
+                            <li class="included"><i class="fas fa-check"></i> Reunión técnica inicial</li>
+                            <li class="included"><i class="fas fa-check"></i> Atención por WhatsApp</li>
+                            <li class="included"><i class="fas fa-check"></i> Informes y documentación</li>
+                            <li class="mid"><i class="fas fa-star"></i> Prioridad estándar en consultas</li>
+                            <li class="discount"><i class="fas fa-tag"></i> 5% descuento en proyectos adicionales</li>
+                        </ul>
+                        <a href="#contacto" id="btn-plan-start" class="btn-plan-outline">Consultar Plan</a>
+                    </div>
+                </div>
+
+                <!-- Plan Pyme (Destacado) -->
+                <div class="pricing-card pricing-card--featured" data-animate="fade-up" style="animation-delay:0.1s">
+                    <div class="featured-ribbon">EL MÁS ELEGIDO</div>
+                    <div class="pricing-header red">
+                        <div class="plan-icon"><i class="fas fa-industry"></i></div>
+                        <h3>PLAN PYME</h3>
+                        <div class="plan-hours">8<span>h / mes</span></div>
+                        <p>PyMEs que buscan optimizar y crecer</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="plan-features">
+                            <li class="included"><i class="fas fa-check"></i> Reunión técnica inicial</li>
+                            <li class="included"><i class="fas fa-check"></i> Atención por WhatsApp</li>
+                            <li class="included"><i class="fas fa-check"></i> Informes y documentación</li>
+                            <li class="high"><i class="fas fa-star"></i> Prioridad <strong>Alta</strong> en consultas</li>
+                            <li class="discount"><i class="fas fa-tag"></i> 10% descuento en proyectos adicionales</li>
+                        </ul>
+                        <a href="#contacto" id="btn-plan-pyme" class="btn-plan-primary">Consultar Plan</a>
+                    </div>
+                </div>
+
+                <!-- Plan Industria -->
+                <div class="pricing-card" data-animate="fade-up" style="animation-delay:0.15s">
+                    <div class="pricing-header navy">
+                        <div class="plan-icon"><i class="fas fa-city"></i></div>
+                        <h3>PLAN INDUSTRIA</h3>
+                        <div class="plan-hours">16<span>h / mes</span></div>
+                        <p>Acompañamiento continuo e integral</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="plan-features">
+                            <li class="included"><i class="fas fa-check"></i> Reunión técnica inicial</li>
+                            <li class="included"><i class="fas fa-check"></i> Atención por WhatsApp</li>
+                            <li class="included"><i class="fas fa-check"></i> Informes y documentación</li>
+                            <li class="high"><i class="fas fa-star"></i> Prioridad <strong>Alta</strong> en consultas</li>
+                            <li class="discount"><i class="fas fa-tag"></i> 15% descuento en proyectos adicionales</li>
+                        </ul>
+                        <a href="#contacto" id="btn-plan-industria" class="btn-plan-outline">Consultar Plan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Proyecto -->
+            <div class="plan-proyecto" data-animate="fade-up">
+                <div class="plan-proyecto-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <div class="plan-proyecto-text">
+                    <h3>PLAN PROYECTO</h3>
+                    <p>¿Tenés un proyecto puntual? Trabajamos por horas según tus necesidades con presupuesto personalizado.
+                    Ideal para demandas específicas o proyectos de corta duración.</p>
+                </div>
+                <a href="#contacto" id="btn-plan-proyecto" class="btn-primary">
+                    Cotizar Proyecto <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Tabla comparativa -->
+            <div class="comparison-table" data-animate="fade-up">
+                <h3>¿Qué incluye cada plan?</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>START</th>
+                                <th class="featured-col">PYME</th>
+                                <th>INDUSTRIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Horas disponibles</td>
+                                <td>4 h</td>
+                                <td class="featured-col"><strong>8 h</strong></td>
+                                <td>16 h</td>
+                            </tr>
+                            <tr>
+                                <td>Reunión técnica inicial</td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                                <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Atención por WhatsApp</td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                                <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Prioridad en consultas</td>
+                                <td>Estándar</td>
+                                <td class="featured-col"><strong>Alta</strong></td>
+                                <td><strong>Alta</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Informes y documentación</td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                                <td class="featured-col"><i class="fas fa-check text-green"></i></td>
+                                <td><i class="fas fa-check text-green"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Descuento proyectos adicionales</td>
+                                <td>5%</td>
+                                <td class="featured-col"><strong>10%</strong></td>
+                                <td><strong>15%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PROCESO ====== -->
+    <section id="proceso" class="process">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <div class="section-label">Cómo trabajamos</div>
+                <h2>¿CÓMO FUNCIONA<br>NUESTRO SERVICIO?</h2>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">Un proceso simple, claro y enfocado en los resultados de tu empresa.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-animate="fade-up" style="animation-delay:0.05s">
+                    <div class="process-step-num">1</div>
+                    <div class="process-step-icon"><i class="fas fa-users"></i></div>
+                    <h4>Nos Reunimos</h4>
+                    <p>Conocemos tu empresa, tu equipo y tus necesidades para entender el contexto real del trabajo.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step" data-animate="fade-up" style="animation-delay:0.1s">
+                    <div class="process-step-num">2</div>
+                    <div class="process-step-icon"><i class="fas fa-list-alt"></i></div>
+                    <h4>Definimos el Plan</h4>
+                    <p>Elegimos juntos el plan de horas que mejor se adapta a tus necesidades y presupuesto.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step" data-animate="fade-up" style="animation-delay:0.15s">
+                    <div class="process-step-num">3</div>
+                    <div class="process-step-icon"><i class="fas fa-cogs"></i></div>
+                    <h4>Trabajamos Juntos</h4>
+                    <p>En el día y horario acordado, como parte de tu equipo, usando tus herramientas y procesos.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step" data-animate="fade-up" style="animation-delay:0.2s">
+                    <div class="process-step-num">4</div>
+                    <div class="process-step-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h4>Obtenés Resultados</h4>
+                    <p>Soluciones concretas y documentadas que mejoran tu producción, reducen costos y hacen crecer tu empresa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA BAND ====== -->
+    <div class="cta-band">
+        <div class="container cta-band-content">
+            <div data-animate="fade-left">
+                <h3>CONCENTRATE EN HACER CRECER TU EMPRESA.</h3>
+                <p>NOSOTROS NOS ENCARGAMOS DE LA INGENIERÍA.</p>
+            </div>
+            <a href="#contacto" class="btn-cta-band" data-animate="fade-right">
+                Armemos tu Plan <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ====== CONTACTO / FOOTER ====== -->
+    <footer id="contacto" class="footer">
+        <div class="footer-top">
+            <div class="container footer-top-grid">
+                <div class="footer-brand" data-animate="fade-left">
+                    <div class="footer-logo-block">
+                        <img src="logo portada horizontal.png" alt="CJ Ingeniería y Diseño Mecánico" class="logo-img logo-img--footer">
+                    </div>
+                    <p class="footer-tagline">
+                        CONCENTRATE EN HACER CRECER TU EMPRESA.<br>
+                        NOSOTROS NOS ENCARGAMOS DE LA INGENIERÍA.
+                    </p>
+                    <p class="footer-cta-text">
+                        CONSULTANOS Y ARMEMOS JUNTOS EL MEJOR PLAN PARA VOS.
+                    </p>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-crosshairs"></i> Precisión</span>
+                        <span><i class="fas fa-tools"></i> Soluciones a Medida</span>
+                        <span><i class="fas fa-trophy"></i> Resultados que Suman</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact-block" data-animate="fade-right">
+                    <h4>CONTACTO DIRECTO</h4>
+                    <div class="footer-contact-card">
+                        <div class="footer-contact-person">
+                            <div class="person-avatar"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <strong>Ing. Carlos J. Sosa</strong>
+                                <span>Ingeniero Mecánico</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/543564595190" target="_blank" id="btn-whatsapp" class="footer-contact-item footer-contact-item--wa">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+54 3564 595190</span>
+                            </div>
+                        </a>
+                        <a href="tel:+543564595190" id="btn-phone" class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+54 - 3564 - 595190</span>
+                            </div>
+                        </a>
+                        <a href="mailto:cjrsosa@hotmail.com" id="btn-email" class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>cjrsosa@hotmail.com</span>
+                            </div>
+                        </a>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Alem 655 · San Francisco, Córdoba, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-bar">
+                <span class="footer-copy">&copy; 2025 CJ Ingeniería y Diseño Mecánico. Todos los derechos reservados.</span>
+                <div class="footer-motto">
+                    <span>PRECISIÓN</span>
+                    <span class="motto-dot">•</span>
+                    <span>SOLUCIONES A MEDIDA</span>
+                    <span class="motto-dot">•</span>
+                    <span>RESULTADOS QUE SUMAN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
