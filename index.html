@@ -422,13 +422,76 @@
     <section id="planes" class="plans">
         <div class="container">
             <div class="section-header center" data-animate="fade-up">
-                <div class="section-label">Precios</div>
+                <div class="section-label">Consulta Precios</div>
                 <h2>PLANES DE INGENIERÍA</h2>
                 <p class="plans-subtitle-red">FLEXIBLES, CLAROS Y ADAPTADOS A TU EMPRESA</p>
                 <div class="section-divider center"></div>
                 <p class="section-subtitle">Elegí el plan que se adapta a tu ritmo. Sin contratos largos ni letra chica.</p>
             </div>
+            <style>
+  /* 1. Contenedor principal en grilla/flex estirado */
+  .pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: stretch; /* Iguala la altura total de las 3 tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
+  /* 2. Estructura de la tarjeta */
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px; /* Responsivo en pantallas chicas y grandes */
+    max-width: 380px;
+    height: 100%;
+    position: relative;
+  }
+
+  /* 3. Normalizar altura del encabezado */
+  .pricing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 190px; /* Igualar el espacio de los subtítulos */
+    justify-content: flex-start;
+  }
+
+  /* 4. Cuerpo de la tarjeta */
+  .pricing-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Absorbe el espacio sobrante */
+    justify-content: space-between;
+    padding-top: 1.5rem;
+  }
+
+  /* 5. Lista de beneficios */
+  .plan-features {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 6. Alineación perfecta de los botones al fondo */
+  .btn-plan-outline,
+  .btn-plan-primary {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  /* 7. Ajuste para el ribbon "EL MÁS ELEGIDO" */
+  .pricing-card--featured {
+    position: relative;
+  }
+</style>
             <div class="pricing-grid">
                 <!-- Plan Start -->
                <div class="pricing-card" data-animate="fade-up" style="animation-delay:0.05s">
