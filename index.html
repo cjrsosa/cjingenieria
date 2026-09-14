@@ -21,15 +21,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 <!-- Schema.org / LocalBusiness -->
-    <script type="application/ld+json">
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://www.cjingenieria.com.ar/#localbusiness",
       "name": "CJ Ingeniería y Diseño Mecánico",
-      "image": "https://cjingenieria.vercel.app/logo_cj_monogram.jpg",
-      "@id": "https://cjingenieria.vercel.app/#localbusiness",
-      "url": "https://cjingenieria.vercel.app",
+      "url": "https://www.cjingenieria.com.ar/",
+      "image": "https://www.cjingenieria.com.ar/logo_cj_monogram.png",
       "telephone": "+543564595190",
+      "priceRange": "$$",
+      "description": "Estudio de Ingeniería y Diseño Mecánico especializado en optimización de procesos de producción, Lean Manufacturing (VSM, 5S, 8M, Kanban, Kaizen), diseño de matrices y dispositivos para centros de mecanizado, torno y balancín, análisis de roturas, desarrollo de nuevos productos y evaluación técnico-económica para PyMEs en San Francisco, Córdoba y la región.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Alem 655",
@@ -37,30 +41,131 @@
         "addressRegion": "Córdoba",
         "postalCode": "2400",
         "addressCountry": "AR"
-     },
-  "description": "Estudio de Diseño Mecánico que brinda soluciones de ingeniería y desarrollo de producto a PyMEs.",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -31.4348270,
-    "longitude": -62.0941713
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.4348270,
+        "longitude": -62.0941713
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "San Francisco"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Córdoba"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Santa Fe"
+        }
       ],
-      "opens": "08:00",
-      "closes": "16:00"
+      "knowsAbout": [
+        "Lean Manufacturing",
+        "VSM (Value Stream Mapping)",
+        "5S",
+        "Las 8M",
+        "Kanban",
+        "Kaizen",
+        "Optimización de producción y procesos",
+        "Reducción de plazos de entrega y Lead Time",
+        "Diseño mecánico 3D y CAD",
+        "Diseño de matrices y herramental",
+        "Dispositivos para centro de mecanizado, torno y balancín",
+        "Análisis de roturas y fallas estructurales (FEA)",
+        "Desarrollo de nuevos productos y mejora de existentes",
+        "Evaluación técnico-económica, análisis de costos y ROI",
+        "Estandarización de documentación técnica y planos"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.cjingenieria.com.ar/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito a un ingeniero o empresa que me ayude a mejorar la producción y solucionar problemas en planta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En CJ Ingeniería y Diseño Mecánico ayudamos a PyMEs industriales a mejorar su producción, detectar cuellos de botella y optimizar la capacidad operativa sin necesidad de contratar a un ingeniero permanente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay alguien en la zona que me pueda ayudar a mejorar mis procesos y realizar un VSM, 5S o Lean Manufacturing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brindamos consultoría e implementación presencial y remota de Lean Manufacturing (VSM, 5S, Kanban, Kaizen, 8M) en San Francisco, Córdoba, Santa Fe y la región para optimizar flujos de trabajo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quiero bajar mis plazos de entrega (lead time), quién se dedica a esto en la región?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Estructuramos y optimizamos las cadenas de valor industriales para eliminar tiempos muertos, reducir desperdicios y bajar drásticamente los plazos de entrega de productos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que mejorar mi situación financiera y evaluar proyectos de inversión, quién me puede ayudar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Realizamos evaluaciones técnico-económicas de proyectos, análisis de costos con herramientas tipo MBA, cálculo de ROI, TIR y punto de equilibrio para asegurar decisiones eficientes y proteger el flujo de caja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo problemas con mi producto, sufre roturas o no resiste lo suficiente, quién me da una solución?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Especialistas en análisis de fallas, cálculo de resistencia de materiales y simulación por elementos finitos (FEA) para solucionar roturas recurrentes y garantizar la durabilidad de las piezas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito desarrollar nuevos productos o mejorar los existentes, quién me ayuda?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ofrecemos servicios integrales de desarrollo de producto, modelado CAD 3D, selección de materiales, tratamientos térmicos y generación de planos constructivos para su fabricación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito diseñar un dispositivo o matriz para mi máquina (centro de mecanizado, torno, balancín)? ¿Quién lo hace en la zona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diseñamos en CAD 3D matrices, herramentales, plantillas y dispositivos de sujeción a medida para centros de mecanizado CNC, tornos y prensas balancín en San Francisco y la zona."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quiero ordenar mi documentación técnica y planos, hay alguna empresa o ingeniero que me ayude?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sistematizamos y normalizamos carpetas técnicas, planos de fabricación, listas de materiales (BOM) y memorias descriptivas para estandarizar procesos y evitar errores en taller."
+          }
+        }
+      ]
     }
-  ],
-  "priceRange": "$$"
+  ]
 }
-    </script>
+</script>
 </head>
 <body>
 
