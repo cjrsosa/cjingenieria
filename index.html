@@ -849,16 +849,19 @@
 
     <script src="script.js"></script>
      <script>
-        // Forzar scroll al fondo absoluto al hacer clic en botones de contacto
+        // Forzar scroll al fondo absoluto alineando la base del footer
         document.querySelectorAll('a[href="#contacto"]').forEach(boton => {
             boton.addEventListener('click', function(e) {
                 e.preventDefault(); // Evita el salto mecánico por defecto
                 
-                // Realiza un scroll suave directo al final absoluto de la página
-                window.scrollTo({
-                    top: document.documentElement.scrollHeight,
-                    behavior: 'smooth'
-                });
+                const footer = document.getElementById('contacto');
+                if (footer) {
+                    // Alinea el final del footer con el final de la pantalla
+                    footer.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'end' 
+                    });
+                }
             });
         });
     </script>
