@@ -454,7 +454,7 @@ ul { list-style: none; }
 .hero-img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 85%; /* Incrementado para agrandar la imagen */
+    max-width: 86%; /* Incrementado para agrandar la imagen */
     border-radius: var(--radius-lg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
