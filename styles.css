@@ -443,8 +443,8 @@ ul { list-style: none; }
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 24px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
+    align-items: flex-end;
+    gap: 35px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
     width: 100%;
 }
 
@@ -452,13 +452,13 @@ ul { list-style: none; }
 .hero-img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 560px; /* Incrementado para agrandar la imagen */
+    max-width: 500px; /* Incrementado para agrandar la imagen */
     border-radius: var(--radius-lg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
     overflow: visible; /* Permite que el badge de "Precisión & Calidad" sobresalga abajo si es necesario */
-    margin-top: -30px;  /* Empuja visualmente todo el bloque hacia arriba */
-    margin-left: -40px; /* Empuja visualmente todo el bloque hacia la izquierda */
+    margin-top: -85px;  /* Empuja visualmente todo el bloque hacia arriba */
+    margin-left: -50px; /* Empuja visualmente todo el bloque hacia la izquierda */
 }
 
 .hero-img {
@@ -466,7 +466,7 @@ ul { list-style: none; }
     height: auto;
     display: block;
     border-radius: var(--radius-lg);
-    transform: scale(1.20);
+    transform: scale(1.40);
     transform-origin: top left;
 }
 
@@ -484,6 +484,7 @@ ul { list-style: none; }
     max-width: 560px; /* Alineado al nuevo ancho de la imagen */
     box-shadow: var(--shadow-lg);
     border-left: 5px solid var(--red); /* Detalle elegante con el color de tu marca */
+    margin-right: 15px;
 }
 
 .hero-stat {
@@ -551,10 +552,19 @@ ul { list-style: none; }
 }
 
 /* Responsivo: Si se ve en celulares, el rectángulo se adapta a vertical para que no se amontone */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .hero-img-wrapper {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .hero-img {
+        transform: scale(1); /* Desactivamos el escalado gigante en móviles para que no rompa la pantalla */
+    }
     .hero-stats-bar {
         flex-direction: column;
         gap: 1.1rem;
+        margin-right: 0;
+        max-width: 100%;
     }
 }
 
