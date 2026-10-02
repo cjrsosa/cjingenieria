@@ -457,6 +457,8 @@ ul { list-style: none; }
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
     overflow: visible; /* Permite que el badge de "Precisión & Calidad" sobresalga abajo si es necesario */
+    margin-top: -30px;  /* Empuja visualmente todo el bloque hacia arriba */
+    margin-left: -40px; /* Empuja visualmente todo el bloque hacia la izquierda */
 }
 
 .hero-img {
@@ -464,6 +466,8 @@ ul { list-style: none; }
     height: auto;
     display: block;
     border-radius: var(--radius-lg);
+    transform: scale(1.20);
+    transform-origin: top left;
 }
 
 /* El antiguo recuadro flotante ahora es una barra/rectángulo horizontal abajo */
