@@ -441,33 +441,52 @@ ul { list-style: none; }
 /* Hero Visual */
 .hero-visual {
     position: relative;
-}
-.hero-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
     width: 100%;
+}
+
+/* Envoltura para agrandar y controlar la imagen */
+.hero-img-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px; /* Incrementado para agrandar la imagen */
     border-radius: var(--radius-lg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
+    overflow: visible; /* Permite que el badge de "Precisión & Calidad" sobresalga abajo si es necesario */
 }
-.hero-card-floating {
-    position: absolute;
-    top: 50%; left: -100px;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.96); /* High contrast light card */
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+/* El antiguo recuadro flotante ahora es una barra/rectángulo horizontal abajo */
+.hero-stats-bar {
+    background: rgba(255, 255, 255, 0.96); /* Mantiene tu High contrast light card con desenfoque */
     backdrop-filter: blur(8px);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     padding: 1.25rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-    min-width: 220px;
-    z-index: 5;
+    justify-content: space-between; /* Alinea los 3 elementos en línea horizontal */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 560px; /* Alineado al nuevo ancho de la imagen */
     box-shadow: var(--shadow-lg);
+    border-left: 5px solid var(--red); /* Detalle elegante con el color de tu marca */
 }
+
 .hero-stat {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    flex: 1;
 }
 .hero-stat i {
     font-size: 1.5rem;
@@ -485,6 +504,7 @@ ul { list-style: none; }
     color: var(--text-light);
     font-weight: 500;
 }
+
 .hero-img-badge {
     position: absolute;
     bottom: -16px;
@@ -499,6 +519,7 @@ ul { list-style: none; }
     align-items: center;
     gap: 0.4rem;
     box-shadow: 0 4px 12px rgba(201,28,34,0.4);
+    z-index: 3;
 }
 
 .hero-scroll-indicator {
@@ -523,6 +544,14 @@ ul { list-style: none; }
 @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Responsivo: Si se ve en celulares, el rectángulo se adapta a vertical para que no se amontone */
+@media (max-width: 768px) {
+    .hero-stats-bar {
+        flex-direction: column;
+        gap: 1.1rem;
+    }
 }
 
 /* ── Stats Bar ──────────────────────────────────────────────── */
