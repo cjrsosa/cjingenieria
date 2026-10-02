@@ -444,7 +444,7 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 130px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
+    gap: 0; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
     width: 100%;
 }
 
@@ -452,14 +452,15 @@ ul { list-style: none; }
 .hero-img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px; /* Incrementado para agrandar la imagen */
+    max-width: 380px; /* Incrementado para agrandar la imagen */
     border-radius: var(--radius-lg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
     overflow: visible; /* Permite que el badge de "Precisión & Calidad" sobresalga abajo si es necesario */
-    margin-top: -110px;  /* Empuja visualmente todo el bloque hacia arriba */
+    margin-top: -115px;  /* Empuja visualmente todo el bloque hacia arriba */
     margin-left: 0px; /* Empuja visualmente todo el bloque hacia la izquierda */
     margin-right: 0; /* Asegura alineación perfecta al ras derecho */
+    margin-bottom: 220px; 
 }
 
 .hero-img {
@@ -467,15 +468,15 @@ ul { list-style: none; }
     height: auto;
     display: block;
     border-radius: var(--radius-lg);
-    transform: scale(1.40);
+    transform: scale(1.50);
     transform-origin: top right;
 }
 
 /* El "botón" de Precisión & Calidad reubicado estratégicamente */
 .hero-img-badge {
     position: absolute;
-    top: -20px; /* Movido arriba a la izquierda para limpiar la zona inferior de la foto */
-    left: -80px; 
+    top: -25px; /* Movido arriba a la izquierda para limpiar la zona inferior de la foto */
+    left: -110px; 
     right: auto; /* Cancelamos el right anterior */
     background: linear-gradient(135deg, var(--red), var(--red-dark));
     color: var(--white);
@@ -561,6 +562,7 @@ ul { list-style: none; }
     }
     .hero-img-wrapper {
         margin-top: 0;
+        margin-bottom: 0;
         max-width: 100%;
     }
     .hero-img {
