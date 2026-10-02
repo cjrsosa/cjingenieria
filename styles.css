@@ -504,7 +504,7 @@ ul { list-style: none; }
     justify-content: space-between; 
     gap: 1.5rem;
     width: 100%;
-    max-width: 100%; /* Ancho completo alineado al impacto visual de la foto superior */
+    max-width: 120%; /* Ancho completo alineado al impacto visual de la foto superior */
     box-shadow: var(--shadow-lg);
     border-left: 5px solid var(--red); 
 }
