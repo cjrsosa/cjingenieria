@@ -444,7 +444,7 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 35px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
+    gap: 130px; /* Espacio entre la imagen y el nuevo rectángulo de abajo */
     width: 100%;
 }
 
@@ -452,13 +452,14 @@ ul { list-style: none; }
 .hero-img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px; /* Incrementado para agrandar la imagen */
+    max-width: 400px; /* Incrementado para agrandar la imagen */
     border-radius: var(--radius-lg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     border: 2px solid rgba(255,255,255,0.08);
     overflow: visible; /* Permite que el badge de "Precisión & Calidad" sobresalga abajo si es necesario */
-    margin-top: -85px;  /* Empuja visualmente todo el bloque hacia arriba */
-    margin-left: -50px; /* Empuja visualmente todo el bloque hacia la izquierda */
+    margin-top: -110px;  /* Empuja visualmente todo el bloque hacia arriba */
+    margin-left: 0px; /* Empuja visualmente todo el bloque hacia la izquierda */
+    margin-right: 0; /* Asegura alineación perfecta al ras derecho */
 }
 
 .hero-img {
@@ -467,24 +468,42 @@ ul { list-style: none; }
     display: block;
     border-radius: var(--radius-lg);
     transform: scale(1.40);
-    transform-origin: top left;
+    transform-origin: top right;
 }
 
-/* El antiguo recuadro flotante ahora es una barra/rectángulo horizontal abajo */
+/* El "botón" de Precisión & Calidad reubicado estratégicamente */
+.hero-img-badge {
+    position: absolute;
+    top: -20px; /* Movido arriba a la izquierda para limpiar la zona inferior de la foto */
+    left: -80px; 
+    right: auto; /* Cancelamos el right anterior */
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(201,28,34,0.4);
+    z-index: 10; /* Por encima del escalado */
+}
+
+/* El antiguo recuadro flotante transformado en barra horizontal inferior */
 .hero-stats-bar {
-    background: rgba(255, 255, 255, 0.96); /* Mantiene tu High contrast light card con desenfoque */
+    background: rgba(255, 255, 255, 0.96); 
     backdrop-filter: blur(8px);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     padding: 1.25rem;
     display: flex;
-    justify-content: space-between; /* Alinea los 3 elementos en línea horizontal */
+    justify-content: space-between; 
     gap: 1.5rem;
     width: 100%;
-    max-width: 560px; /* Alineado al nuevo ancho de la imagen */
+    max-width: 560px; /* Ancho completo alineado al impacto visual de la foto superior */
     box-shadow: var(--shadow-lg);
-    border-left: 5px solid var(--red); /* Detalle elegante con el color de tu marca */
-    margin-right: 15px;
+    border-left: 5px solid var(--red); 
 }
 
 .hero-stat {
@@ -508,23 +527,6 @@ ul { list-style: none; }
     font-size: 0.78rem;
     color: var(--text-light);
     font-weight: 500;
-}
-
-.hero-img-badge {
-    position: absolute;
-    bottom: -16px;
-    right: 20px;
-    background: linear-gradient(135deg, var(--red), var(--red-dark));
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    box-shadow: 0 4px 12px rgba(201,28,34,0.4);
-    z-index: 3;
 }
 
 .hero-scroll-indicator {
@@ -553,17 +555,27 @@ ul { list-style: none; }
 
 /* Responsivo: Si se ve en celulares, el rectángulo se adapta a vertical para que no se amontone */
 @media (max-width: 992px) {
+    .hero-visual {
+        align-items: center;
+        gap: 24px; /* Retorna al espacio normal en móviles */
+    }
     .hero-img-wrapper {
         margin-top: 0;
-        margin-left: 0;
+        max-width: 100%;
     }
     .hero-img {
-        transform: scale(1); /* Desactivamos el escalado gigante en móviles para que no rompa la pantalla */
+        transform: scale(1); /* Desactivamos el gigantismo en pantallas chicas */
+    }
+    .hero-img-badge {
+        position: absolute;
+        bottom: -16px;
+        right: 20px;
+        top: auto;
+        left: auto;
     }
     .hero-stats-bar {
         flex-direction: column;
         gap: 1.1rem;
-        margin-right: 0;
         max-width: 100%;
     }
 }
