@@ -43,7 +43,7 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+h1, h2, h3, h4, h5 { font-family: 'Montserrat', 'Inter', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
@@ -104,12 +104,13 @@ ul { list-style: none; }
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, var(--red), var(--red-dark));
     color: var(--white);
     padding: 0.85rem 1.75rem;
     border-radius: var(--radius);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border: 2px solid transparent;
@@ -250,8 +251,9 @@ ul { list-style: none; }
     gap: 0.25rem;
 }
 .nav-link {
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--text-mid);
     padding: 0.4rem 0.75rem;
     border-radius: 6px;
@@ -265,6 +267,7 @@ ul { list-style: none; }
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, var(--red), var(--red-dark));
     color: var(--white) !important;
     padding: 0.5rem 1.1rem;
@@ -1475,30 +1478,33 @@ tbody tr:hover td { background: var(--off-white); }
     .cta-band-content { flex-direction: column; text-align: center; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links {
         display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: var(--navy);
+        width: 100vw;               /* Asegura el ancho completo */
+        height: 100vh;              /* Asegura el alto completo */
+        background-color: #081023;  /* Fuerza el fondo azul marino institucional */
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1.25rem;
-        z-index: 999;
+        gap: 1.75rem;               
+        z-index: 2000;              /* Se posiciona POR ENCIMA de la barra blanca */
         padding: 2rem;
     }
     .nav-links.open { display: flex; }
-    .nav-link { font-size: 1.1rem; color: var(--white); }
-    .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.08); }
-    .nav-cta { font-size: 1rem; padding: 0.75rem 2rem; margin-left: 0; }
+    .nav-link { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--white) !important; background: transparent !important; }
+    .nav-link.active { background: transparent !important; color: var(--white) !important; } /* ◄ Limpia el recuadro fijo de Inicio de entrada */
+    .nav-link:hover { background: rgba(244, 245, 247, 0.18) !important; color: var(--white) !important; } /* ◄ El recuadro gris ahora SÓLO actúa al tocarlo o pasar el mouse */
+    .nav-cta { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; padding: 0.75rem 2rem; margin-left: 0; }
 
     .menu-toggle {
         display: flex;
         position: relative;
-        z-index: 1001;
+        z-index: 2100;
     }
-    .menu-toggle.open span { background: var(--white); }
+    .menu-toggle.open span { background: #ffffff !important; }
 
     .hero-content { grid-template-columns: 1fr; text-align: center; }
     .hero-text h1 { font-size: 2rem; }
@@ -1524,7 +1530,7 @@ tbody tr:hover td { background: var(--off-white); }
 
     /* Logo responsiveness for tablets */
     .logo--custom {
-        max-width: calc(100% - 100px);
+        max-width: 75%;
         margin-left: 10px;
         gap: 0.75rem;
     }
@@ -1564,6 +1570,7 @@ tbody tr:hover td { background: var(--off-white); }
 
     /* Logo responsiveness for mobile */
     .logo--custom {
+        max-width: 80%;
         margin-left: 5px;
         gap: 0.5rem;
     }
