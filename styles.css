@@ -43,7 +43,7 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5 { font-family: 'Montserrat', 'Inter', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+h1, h2, h3, h4, h5 { font-family: 'Metropolis', 'Inter', sans-serif; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
@@ -104,13 +104,13 @@ ul { list-style: none; }
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Metropolis', sans-serif;
     background: linear-gradient(135deg, var(--red), var(--red-dark));
     color: var(--white);
     padding: 0.85rem 1.75rem;
     border-radius: var(--radius);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border: 2px solid transparent;
@@ -1494,10 +1494,10 @@ tbody tr:hover td { background: var(--off-white); }
         padding: 2rem;
     }
     .nav-links.open { display: flex; }
-    .nav-link { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--white) !important; background: transparent !important; }
+    .nav-link { font-family: 'Metropolis', sans-serif; font-size: 1.2rem; color: var(--white) !important; background: transparent !important; }
     .nav-link.active { background: transparent !important; color: var(--white) !important; } /* ◄ Limpia el recuadro fijo de Inicio de entrada */
     .nav-link:hover { background: rgba(244, 245, 247, 0.18) !important; color: var(--white) !important; } /* ◄ El recuadro gris ahora SÓLO actúa al tocarlo o pasar el mouse */
-    .nav-cta { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; padding: 0.75rem 2rem; margin-left: 0; }
+    .nav-cta { font-family: 'Metropolis', sans-serif; font-size: 1.1rem; padding: 0.75rem 2rem; margin-left: 0; }
 
     .menu-toggle {
         display: flex;
