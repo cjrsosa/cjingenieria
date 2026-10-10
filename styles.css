@@ -902,7 +902,7 @@ ul { list-style: none; }
 .plans-subtitle-red {
     color: var(--red);
     font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     display: block;
