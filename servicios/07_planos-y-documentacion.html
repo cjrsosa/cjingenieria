@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos y Documentación Técnica | CJ Ingeniería</title>
+    <meta name="description" content="Elaboramos planos normalizados, documentación técnica y archivos de fabricación para ordenar y estandarizar los procesos de tu planta.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* =========================================================
+           ESTILOS ESPECÍFICOS — PÁGINA DE SERVICIO
+        ========================================================= */
+
+        /* Hero: texto a la izquierda, imagen a la derecha */
+        .service-page-hero {
+            min-height: 96vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 80px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1e40 100%);
+            color: var(--white);
+            text-align: left;
+        }
+
+        .service-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .service-hero-text { max-width: 650px; }
+
+        .service-badge {
+            display: inline-block;
+            background-color: rgba(201, 28, 34, 0.2);
+            color: #ff6b6b;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(201, 28, 34, 0.5);
+        }
+
+        .service-page-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .service-intro {
+            font-size: 1.2rem;
+            color: #aeb5c2;
+            max-width: 700px;
+            margin: 0 0 30px 0;
+            line-height: 1.6;
+        }
+
+        .btn-volver {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 25px 0 28px 0;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        /* Indicador "Conocer más" */
+        .hero-more-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-more-indicator i {
+            font-size: 0.85rem;
+            animation: heroArrow 1.8s ease-in-out infinite;
+        }
+
+        .hero-more-indicator:hover { color: #ff6b6b; }
+
+        @keyframes heroArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Imagen del hero */
+        .service-hero-image { position: relative; }
+
+        .service-hero-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-hero-image-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .service-hero-image-wrapper:hover img { transform: scale(1.05); }
+
+        /* Contenido y preguntas */
+        .service-content-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .questions-section {
+            max-width: 900px;
+            margin: 0 auto 90px auto;
+            text-align: center;
+        }
+
+        .questions-section--cta { margin: 80px auto 40px auto; }
+
+        .question-block + .question-block { margin-top: 55px; }
+
+        .question-block h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .question-block p {
+            color: var(--text-muted);
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 820px;
+        }
+
+        /* Técnicas */
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .technique-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .technique-card:nth-child(3n+1) { transition-delay: 0.1s; }
+        .technique-card:nth-child(3n+2) { transition-delay: 0.2s; }
+        .technique-card:nth-child(3n)   { transition-delay: 0.3s; }
+
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .technique-icon {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .technique-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .technique-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Tarjetas con selector de imágenes */
+        .image-card-container {
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        /* Cuadro de la imagen principal: altura fija, protegido contra compresión */
+        .main-image-wrapper {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 240px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 12px;
+        }
+
+        .main-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            border-radius: 6px;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Tira de miniaturas */
+        .thumb-selector {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .thumb-btn {
+            background: none;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            width: 55px;
+            height: 45px;
+            padding: 0;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+
+        .thumb-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb-btn:hover { opacity: 1; }
+
+        .thumb-btn.active {
+            border-color: var(--red);
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Imagen principal agrandada (x2) */
+        .image-card-container.zoom { z-index: 999; }
+
+        .image-card-container.zoom .main-image-wrapper {
+            overflow: visible;
+            z-index: 10;
+        }
+
+        .image-card-container.zoom .main-image-wrapper img {
+            transform: scale(2);
+            cursor: zoom-out;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Botón final */
+        .cta-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .service-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .service-hero-text { max-width: 100%; }
+
+            .service-page-hero h1 { font-size: 2.5rem; }
+
+            .service-hero-image {
+                max-width: 750px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-page-hero { padding: 120px 0 60px 0; }
+
+            .service-page-hero h1 { font-size: 2.2rem; }
+
+            .service-intro { font-size: 1.05rem; }
+
+            .question-block h2 { font-size: 1.8rem; }
+
+            .image-card-container.zoom .main-image-wrapper img { transform: scale(1.3); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo logo--custom">
+                <div class="logo-monogram-wrap">
+                    <img src="../recursos/logo_cj_monogram.png" alt="CJ Monograma" class="logo-monogram">
+                </div>
+                <div class="logo-text-wrap">
+                    <span class="logo-line-1">INGENIERÍA Y</span>
+                    <span class="logo-line-2">DISEÑO MECÁNICO</span>
+                    <div class="logo-text-sep"></div>
+                    <span class="logo-line-3">TU DEPARTAMENTO DE INGENIERÍA</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="../index.html#inicio" class="nav-link">Inicio</a>
+                <a href="../index.html#filosofia" class="nav-link">Filosofía</a>
+                <a href="../index.html#servicios" class="nav-link active">Servicios</a>
+                <a href="../index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="../index.html#planes" class="nav-link">Planes</a>
+                <a href="../index.html#proceso" class="nav-link">Proceso</a>
+                <a href="#contacto" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Contactar
+                </a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ====== HERO DEL SERVICIO ====== -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="service-hero-grid">
+
+                <!-- Texto a la izquierda -->
+                <div class="service-hero-text" data-animate="fade-right">
+                    <a href="../index.html#servicios" class="btn-volver">
+                        <i class="fas fa-arrow-left"></i> Volver a Servicios
+                    </a>
+
+                    <span class="service-badge">Servicio 07</span>
+
+                    <h1>Planos y Documentación</h1>
+
+                    <p class="service-intro">
+                        Que la planta y el proveedor interpreten lo mismo empieza por un buen plano. Elaboramos planos
+                        normalizados y carpetas técnicas ordenadas para ayudar a reducir errores de interpretación
+                        y facilitar tus compras.
+                    </p>
+
+                    <a href="#preguntas" class="hero-more-indicator">
+                        <span>Conocer más</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <!-- Imagen a la derecha -->
+                <div class="service-hero-image" data-animate="fade-left">
+                    <div class="service-hero-image-wrapper">
+                        <img src="../recursos/Planos_y_documentacion.jpg" alt="Planos técnicos, documentación y despiece mecánico">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTENIDO DEL SERVICIO ====== -->
+    <section class="service-content-section" id="preguntas">
+        <div class="container">
+
+            <!-- Preguntas -->
+            <div class="questions-section" data-animate="fade-up">
+
+                <div class="question-block">
+                    <h2>¿Qué es la Documentación Técnica Normalizada?</h2>
+                    <p>
+                        Es el conjunto de registros gráficos, listados y especificaciones que traducen una idea o un
+                        diseño en indicaciones claras para la producción. No se trata solo de dibujar líneas: implica
+                        aplicar criterios de dibujo técnico normalizado, tolerancias geométricas y listados de
+                        materiales estructurados, para que proveedores y talleres interpreten lo mismo.
+                    </p>
+                </div>
+
+                <div class="question-block">
+                    <h2>¿Por qué es importante para tu empresa?</h2>
+                    <p>
+                        Fabricar a partir de la memoria de los operarios o de bocetos a mano alzada puede generar
+                        mermas costosas, piezas defectuosas y retrasos logísticos. Contar con planos normalizados y
+                        despiece ayuda a reducir la dependencia de un único operario o proveedor, agiliza los
+                        presupuestos de compras y facilita ordenar la información técnica de tu PyME.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Metodología -->
+            <div class="section-header" data-animate="fade-up">
+                <div class="section-label">Documentación técnica</div>
+                <h2 class="section-title">Lo que entregamos</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="techniques-grid">
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-ruler-combined technique-icon"></i>
+                    <h3>Planos de Detalle y Fabricación</h3>
+                    <p>
+                        Preparamos vistas normalizadas con cotas, rugosidades, tratamientos y tolerancias críticas, para que el taller fabrique cada pieza según las especificaciones.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-sitemap technique-icon"></i>
+                    <h3>Planos de Conjunto y Despiece</h3>
+                    <p>
+                        Representamos ensambles mecánicos complejos mediante vistas explosionadas que muestran el orden de montaje y el encaje de cada componente.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-list-check technique-icon"></i>
+                    <h3>Listado de Materiales (BOM)</h3>
+                    <p>
+                        Organizamos listas por niveles para compras y stock, con cantidades, piezas comerciales, materia prima y códigos de identificación.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-book-open technique-icon"></i>
+                    <h3>Hojas de Operación y Manuales de Montaje</h3>
+                    <p>
+                        Documentamos los pasos de operación y ensamblaje para ayudar al operario a trabajar de forma segura, eficiente y estandarizada.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-folder-open technique-icon"></i>
+                    <h3>Digitalización de Carpetas Técnicas</h3>
+                    <p>
+                        Convertimos planos antiguos o en papel en archivos CAD vectoriales y registros digitales actualizados, listos para consulta y producción.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-cube technique-icon"></i>
+                    <h3>Modelos 3D y Archivos Nativos</h3>
+                    <p>
+                        Entregamos modelos paramétricos y formatos de intercambio estándar para continuar el diseño y preparar operaciones CAM, mecanizado o corte CNC.
+                    </p>
+                </div>
+
+                <!-- Planos A (4 imágenes) -->
+                <div class="technique-card image-card-container" data-animate="fade-up">
+                    <div class="main-image-wrapper">
+                        <img src="../recursos/planos_documentacion_3d_1a.jpg" loading="lazy" alt="Planos 1: documentación técnica">
+                    </div>
+                    <div class="thumb-selector">
+                        <button type="button" class="thumb-btn active" aria-label="Ver imagen 1 de los planos 1"><img src="../recursos/planos_documentacion_3d_1a.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 2 de los planos 1"><img src="../recursos/planos_documentacion_3d_1b.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 3 de los planos 1"><img src="../recursos/planos_documentacion_3d_1c.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 4 de los planos 1"><img src="../recursos/planos_documentacion_3d_1d.jpg" loading="lazy" alt=""></button>
+                    </div>
+                </div>
+
+                <!-- Planos B (4 imágenes) -->
+                <div class="technique-card image-card-container" data-animate="fade-up">
+                    <div class="main-image-wrapper">
+                        <img src="../recursos/planos_documentacion_3d_2a.jpg" loading="lazy" alt="Planos 2: documentación técnica">
+                    </div>
+                    <div class="thumb-selector">
+                        <button type="button" class="thumb-btn active" aria-label="Ver imagen 1 de los planos 2"><img src="../recursos/planos_documentacion_3d_2a.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 2 de los planos 2"><img src="../recursos/planos_documentacion_3d_2b.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 3 de los planos 2"><img src="../recursos/planos_documentacion_3d_2c.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 4 de los planos 2"><img src="../recursos/planos_documentacion_3d_2d.jpg" loading="lazy" alt=""></button>
+                    </div>
+                </div>
+
+                <!-- Planos C (4 imágenes) -->
+                <div class="technique-card image-card-container" data-animate="fade-up">
+                    <div class="main-image-wrapper">
+                        <img src="../recursos/planos_documentacion_3d_3a.jpg" loading="lazy" alt="Planos 3: documentación técnica">
+                    </div>
+                    <div class="thumb-selector">
+                        <button type="button" class="thumb-btn active" aria-label="Ver imagen 1 de los planos 3"><img src="../recursos/planos_documentacion_3d_3a.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 2 de los planos 3"><img src="../recursos/planos_documentacion_3d_3b.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 3 de los planos 3"><img src="../recursos/planos_documentacion_3d_3c.jpg" loading="lazy" alt=""></button>
+                        <button type="button" class="thumb-btn" aria-label="Ver imagen 4 de los planos 3"><img src="../recursos/planos_documentacion_3d_3d.jpg" loading="lazy" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cierre: consulta o planes -->
+            <div class="questions-section questions-section--cta" data-animate="fade-up">
+                <div class="question-block">
+                    <h2>¿Cómo trabajamos tu proyecto?</h2>
+                    <p>
+                        Cada proyecto se presupuesta a medida. Si ya tenés tu diseño, podés contratar solo los planos
+                        y la documentación, sin necesidad de pasar por el desarrollo completo del producto. Nos contás
+                        qué tenés (una pieza, un boceto, planos viejos o un modelo 3D), definimos el alcance
+                        y te pasamos el presupuesto.
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a href="https://wa.me/543564595190?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20Planos%20y%20Documentaci%C3%B3n." class="btn-hero-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Cotizá tu proyecto
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer id="contacto" class="footer footer--full">
+        <div class="footer-top">
+            <div class="container footer-top-grid">
+                <div class="footer-brand" data-animate="fade-left">
+                    <div class="footer-logo-block">
+                        <img src="../recursos/logo portada horizontal.png" alt="CJ Ingeniería y Diseño Mecánico" class="logo-img logo-img--footer">
+                    </div>
+                    <p class="footer-tagline">
+                        ¿TU PLANTA TRABAJA CON PLANOS DESORDENADOS O SIN ELLOS?<br>
+                        Ordenamos la carpeta técnica de tu planta.
+                    </p>
+                    <p class="footer-cta-text">
+                        CONSULTANOS Y ARMEMOS JUNTOS EL MEJOR PLAN PARA TU EMPRESA.
+                    </p>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-crosshairs"></i> Precisión</span>
+                        <span><i class="fas fa-tools"></i> Soluciones a Medida</span>
+                        <span><i class="fas fa-trophy"></i> Resultados que Suman</span>
+                    </div>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-chart-line"></i> Técnicas MBA</span>
+                        <span><i class="fas fa-industry"></i> Lean Manufacturing</span>
+                        <span><i class="fas fa-cubes"></i> Diseño 3D &amp; FEA</span>
+                        <span><i class="fas fa-handshake"></i> Planes Flexibles</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact-block" data-animate="fade-right">
+                    <h4>CONTACTO DIRECTO</h4>
+                    <div class="footer-contact-card">
+                        <div class="footer-contact-person">
+                            <div class="person-avatar"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <strong>Ing. Carlos J. Sosa</strong>
+                                <span>Ingeniero Mecánico</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/543564595190?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20Planos%20y%20Documentaci%C3%B3n." target="_blank" rel="noopener" id="btn-whatsapp" class="footer-contact-item footer-contact-item--wa">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+54 3564 595190</span>
+                            </div>
+                        </a>
+                        <a href="tel:+543564595190" id="btn-phone" class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+54 - 3564 - 595190</span>
+                            </div>
+                        </a>
+                        <a href="mailto:cjrsosa@hotmail.com" id="btn-email" class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>cjrsosa@hotmail.com</span>
+                            </div>
+                        </a>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Alem 655 · San Francisco, Córdoba, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-bar">
+                <span class="footer-copy">&copy; 2026 CJ Ingeniería y Diseño Mecánico. Todos los derechos reservados.</span>
+                <div class="footer-motto">
+                    <span>PRECISIÓN</span>
+                    <span class="motto-dot">•</span>
+                    <span>SOLUCIONES A MEDIDA</span>
+                    <span class="motto-dot">•</span>
+                    <span>RESULTADOS QUE SUMAN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('a[href="#contacto"]').forEach(boton => {
+            boton.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Primero se acerca al final para disparar las animaciones del footer
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight - 200,
+                    behavior: 'smooth'
+                });
+
+                // Luego de 150 ms llega hasta el final de la página
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 150);
+            });
+        });
+    </script>
+
+    <script>
+        // Selector de imágenes con zoom (una tarjeta por producto)
+        (function () {
+            function cerrarZoom() {
+                document.querySelectorAll('.image-card-container.zoom').forEach(c => c.classList.remove('zoom'));
+            }
+
+            document.querySelectorAll('.image-card-container').forEach(card => {
+                const principal = card.querySelector('.main-image-wrapper img');
+                const botones = card.querySelectorAll('.thumb-btn');
+
+                // Miniaturas: cambian la imagen principal
+                botones.forEach(boton => {
+                    boton.addEventListener('click', () => {
+                        cerrarZoom();
+                        const nuevaImagen = boton.querySelector('img').getAttribute('src');
+                        principal.style.opacity = '0';
+                        setTimeout(() => {
+                            principal.src = nuevaImagen;
+                            principal.style.opacity = '1';
+                        }, 150);
+                        botones.forEach(b => b.classList.remove('active'));
+                        boton.classList.add('active');
+                    });
+                });
+
+                // Imagen principal: se agranda x2 (o se achica si ya estaba agrandada)
+                principal.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const estabaAgrandada = card.classList.contains('zoom');
+                    cerrarZoom();
+                    if (!estabaAgrandada) card.classList.add('zoom');
+                });
+            });
+
+            // Clic en cualquier otro lado: se achica
+            document.addEventListener('click', cerrarZoom);
+        })();
+    </script>
+</body>
+</html>

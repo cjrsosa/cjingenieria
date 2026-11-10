@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Técnico-Económica y Proyectos de Inversión | CJ Ingeniería</title>
+    <meta name="description" content="Evaluamos si una inversión conviene antes de que decidas: costos, retorno, plazo de recupero y escenarios, para PyMEs industriales.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* =========================================================
+           ESTILOS ESPECÍFICOS — PÁGINA DE SERVICIO
+        ========================================================= */
+
+        /* Hero: texto a la izquierda, imagen a la derecha */
+        .service-page-hero {
+            min-height: 96vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 80px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1e40 100%);
+            color: var(--white);
+            text-align: left;
+        }
+
+        .service-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .service-hero-text { max-width: 650px; }
+
+        .service-badge {
+            display: inline-block;
+            background-color: rgba(201, 28, 34, 0.2);
+            color: #ff6b6b;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(201, 28, 34, 0.5);
+        }
+
+        .service-page-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .service-intro {
+            font-size: 1.2rem;
+            color: #aeb5c2;
+            max-width: 700px;
+            margin: 0 0 30px 0;
+            line-height: 1.6;
+        }
+
+        .btn-volver {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 10px 0 28px 0;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        /* Indicador "Conocer más" */
+        .hero-more-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-more-indicator i {
+            font-size: 0.85rem;
+            animation: heroArrow 1.8s ease-in-out infinite;
+        }
+
+        .hero-more-indicator:hover { color: #ff6b6b; }
+
+        @keyframes heroArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Imagen del hero */
+        .service-hero-image { position: relative; }
+
+        .service-hero-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-hero-image-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .service-hero-image-wrapper:hover img { transform: scale(1.05); }
+
+        /* Contenido y preguntas */
+        .service-content-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .questions-section {
+            max-width: 900px;
+            margin: 0 auto 90px auto;
+            text-align: center;
+        }
+
+        .questions-section--cta { margin: 80px auto 40px auto; }
+
+        .question-block + .question-block { margin-top: 55px; }
+
+        .question-block h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .question-block p {
+            color: var(--text-muted);
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 820px;
+        }
+
+        /* Técnicas */
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .technique-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .technique-card:nth-child(3n+1) { transition-delay: 0.1s; }
+        .technique-card:nth-child(3n+2) { transition-delay: 0.2s; }
+        .technique-card:nth-child(3n)   { transition-delay: 0.3s; }
+
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .technique-icon {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .technique-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .technique-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Cuadrantes de la Matriz de Eisenhower */
+        .quadrants { margin-top: 12px; }
+
+        .quadrants li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .quadrants li:last-child { margin-bottom: 0; }
+
+        .quadrants strong { color: var(--navy); }
+
+        /* Botones finales */
+        .cta-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-outline-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1.5px solid var(--navy);
+            transition: var(--transition);
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .service-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .service-hero-text { max-width: 100%; }
+
+            .service-page-hero h1 { font-size: 2.5rem; }
+
+            .service-hero-image {
+                max-width: 750px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-page-hero { padding: 120px 0 60px 0; }
+
+            .service-page-hero h1 { font-size: 2.2rem; }
+
+            .service-intro { font-size: 1.05rem; }
+
+            .question-block h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo logo--custom">
+                <div class="logo-monogram-wrap">
+                    <img src="../recursos/logo_cj_monogram.png" alt="CJ Monograma" class="logo-monogram">
+                </div>
+                <div class="logo-text-wrap">
+                    <span class="logo-line-1">INGENIERÍA Y</span>
+                    <span class="logo-line-2">DISEÑO MECÁNICO</span>
+                    <div class="logo-text-sep"></div>
+                    <span class="logo-line-3">TU DEPARTAMENTO DE INGENIERÍA</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="../index.html#inicio" class="nav-link">Inicio</a>
+                <a href="../index.html#filosofia" class="nav-link">Filosofía</a>
+                <a href="../index.html#servicios" class="nav-link active">Servicios</a>
+                <a href="../index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="../index.html#planes" class="nav-link">Planes</a>
+                <a href="../index.html#proceso" class="nav-link">Proceso</a>
+                <a href="#contacto" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Contactar
+                </a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ====== HERO DEL SERVICIO ====== -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="service-hero-grid">
+
+                <!-- Texto a la izquierda -->
+                <div class="service-hero-text" data-animate="fade-right">
+                    <a href="../index.html#servicios" class="btn-volver">
+                        <i class="fas fa-arrow-left"></i> Volver a Servicios
+                    </a>
+
+                    <span class="service-badge">Servicio 02</span>
+
+                    <h1>Evaluación Técnico-Económica</h1>
+
+                    <p class="service-intro">
+                        ¿Estás por invertir en una máquina, una mejora o un proceso nuevo y querés saber si conviene?
+                        Hacemos los números antes de que decidas: costos, retorno y plazo de recupero,
+                        con escenarios para distintas situaciones.
+                    </p>
+
+                    <a href="#preguntas" class="hero-more-indicator">
+                        <span>Conocer más</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <!-- Imagen a la derecha -->
+                <div class="service-hero-image" data-animate="fade-left">
+                    <div class="service-hero-image-wrapper">
+                        <img src="../recursos/evaluacion_tecnico_economica.jpg" alt="Análisis financiero y evaluación técnico-económica">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTENIDO DEL SERVICIO ====== -->
+    <section class="service-content-section" id="preguntas">
+        <div class="container">
+
+            <!-- Preguntas -->
+            <div class="questions-section" data-animate="fade-up">
+
+                <div class="question-block">
+                    <h2>¿Qué es una Evaluación Técnico-Económica?</h2>
+                    <p>
+                        Es un estudio estratégico que une la ingeniería de procesos en la planta con la ingeniería
+                        analítica de finanzas corporativas. Su objetivo es analizar si cada rediseño, automatización
+                        o compra de maquinaria está respaldado por un retorno de inversión estimado con datos reales,
+                        para reducir el riesgo sobre el capital de tu empresa.
+                    </p>
+                </div>
+
+                <div class="question-block">
+                    <h2>¿Por qué es útil para tu empresa?</h2>
+                    <p>
+                        Ayuda a evitar gastos en áreas que no aportan rentabilidad y a reducir la incertidumbre
+                        financiera. Te permite estimar el margen de tus productos, calcular en cuánto tiempo
+                        recuperarías lo invertido y ver el impacto económico antes de firmar una compra.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Metodología -->
+            <div class="section-header" data-animate="fade-up">
+                <div class="section-label">Metodología Financiera</div>
+                <h2 class="section-title">Técnicas y Herramientas Estratégicas</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="techniques-grid">
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-tasks technique-icon"></i>
+                    <h3>Matriz de Eisenhower (Gestión del Tiempo)</h3>
+                    <p>Prioriza las tareas según urgencia e importancia:</p>
+                    <ul class="quadrants">
+                        <li><strong>I. Hacer:</strong> crisis y averías.</li>
+                        <li><strong>II. Planificar:</strong> prevención y mejoras.</li>
+                        <li><strong>III. Delegar:</strong> interrupciones y rutinas.</li>
+                        <li><strong>IV. Eliminar:</strong> distracciones y trámites.</li>
+                    </ul>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-balance-scale technique-icon"></i>
+                    <h3>Cálculo del Punto de Equilibrio</h3>
+                    <p>
+                        Clasificamos tus costos fijos y variables para identificar tu umbral de facturación mensual:
+                        el volumen mínimo de producción necesario para cubrir tus costos sin generar pérdidas.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-coins technique-icon"></i>
+                    <h3>Costeo Basado en Actividades (ABC)</h3>
+                    <p>
+                        Implementamos un sistema analítico de contabilidad de gestión que asigna los costos indirectos
+                        de fabricación a cada producto según las actividades que los generan, para ayudar a detectar
+                        líneas rentables y deficitarias.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-filter technique-icon"></i>
+                    <h3>Teoría de Restricciones (Financial TOC)</h3>
+                    <p>
+                        Modelamos y evaluamos el flujo de caja libre operativo considerando las limitaciones de liquidez
+                        y de capital de trabajo de tu empresa. Priorizamos proyectos de rápida conversión en efectivo.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-chart-pie technique-icon"></i>
+                    <h3>Análisis de Costos de No Calidad (COPQ)</h3>
+                    <p>
+                        Cuantificamos en dinero las ineficiencias de los procesos (mermas, desechos, retrabajos).
+                        Utilizamos herramientas estadísticas para aislar estas pérdidas y proyectar su impacto
+                        en tu estado de resultados.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-chart-line technique-icon"></i>
+                    <h3>Evaluación de Proyectos (ROI y Payback)</h3>
+                    <p>
+                        Medimos la relación entre el beneficio económico neto de las mejoras y el capital invertido,
+                        y estimamos el período de recupero (en meses o años).
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-calculator technique-icon"></i>
+                    <h3>Modelos de Viabilidad (VAN y TIR)</h3>
+                    <p>
+                        Estructuramos presupuestos de capital proyectando flujos futuros a valor presente.
+                        Analizamos si la adquisición de activos supera la tasa de descuento de la empresa.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-laptop-code technique-icon"></i>
+                    <h3>Programación Lineal (Mix de Producción)</h3>
+                    <p>
+                        Diseñamos modelos de optimización matemática (Solver) para calcular la combinación de productos
+                        a fabricar que busca maximizar el margen de contribución del negocio, respetando los
+                        cuellos de botella.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-project-diagram technique-icon"></i>
+                    <h3>Simulación de Sensibilidad Corporativa</h3>
+                    <p>
+                        Modelamos escenarios (“¿Qué pasa si...?”) frente a variaciones en la inflación, los costos
+                        o las ventas, para que puedas evaluar tus decisiones antes de asumir compromisos financieros.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Cierre: consulta o planes -->
+            <div class="questions-section questions-section--cta" data-animate="fade-up">
+                <div class="question-block">
+                    <h2>¿Cómo trabajamos tu evaluación?</h2>
+                    <p>
+                        Podés pedir el análisis de una inversión puntual o incorporarlo a un plan:
+                        el Plan PyME incluye informes técnicos con cálculo de retorno (ROI).
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a href="https://wa.me/543564595190?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20Evaluaci%C3%B3n%20T%C3%A9cnico-Econ%C3%B3mica." class="btn-hero-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Consultá tu caso
+                    </a>
+                    <a href="../index.html#planes" class="btn-outline-dark">
+                        Ver Planes <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer id="contacto" class="footer footer--full">
+        <div class="footer-top">
+            <div class="container footer-top-grid">
+                <div class="footer-brand" data-animate="fade-left">
+                    <div class="footer-logo-block">
+                        <img src="../recursos/logo portada horizontal.png" alt="CJ Ingeniería y Diseño Mecánico" class="logo-img logo-img--footer">
+                    </div>
+                    <p class="footer-tagline">
+                        CONTANOS QUÉ INVERSIÓN TENÉS EN MENTE<br>
+                        Comunicate con nosotros y te decimos cómo evaluarla.
+                    </p>
+                    <p class="footer-cta-text">
+                        CONSULTANOS Y ARMEMOS JUNTOS EL MEJOR PLAN PARA TU EMPRESA.
+                    </p>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-crosshairs"></i> Precisión</span>
+                        <span><i class="fas fa-tools"></i> Soluciones a Medida</span>
+                        <span><i class="fas fa-trophy"></i> Resultados que Suman</span>
+                    </div>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-chart-line"></i> Técnicas MBA</span>
+                        <span><i class="fas fa-industry"></i> Lean Manufacturing</span>
+                        <span><i class="fas fa-cubes"></i> Diseño 3D &amp; FEA</span>
+                        <span><i class="fas fa-handshake"></i> Planes Flexibles</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact-block" data-animate="fade-right">
+                    <h4>CONTACTO DIRECTO</h4>
+                    <div class="footer-contact-card">
+                        <div class="footer-contact-person">
+                            <div class="person-avatar"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <strong>Ing. Carlos J. Sosa</strong>
+                                <span>Ingeniero Mecánico</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/543564595190?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20Evaluaci%C3%B3n%20T%C3%A9cnico-Econ%C3%B3mica." target="_blank" rel="noopener" id="btn-whatsapp" class="footer-contact-item footer-contact-item--wa">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+54 3564 595190</span>
+                            </div>
+                        </a>
+                        <a href="tel:+543564595190" id="btn-phone" class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+54 - 3564 - 595190</span>
+                            </div>
+                        </a>
+                        <a href="mailto:cjrsosa@hotmail.com" id="btn-email" class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>cjrsosa@hotmail.com</span>
+                            </div>
+                        </a>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Alem 655 · San Francisco, Córdoba, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-bar">
+                <span class="footer-copy">&copy; 2026 CJ Ingeniería y Diseño Mecánico. Todos los derechos reservados.</span>
+                <div class="footer-motto">
+                    <span>PRECISIÓN</span>
+                    <span class="motto-dot">•</span>
+                    <span>SOLUCIONES A MEDIDA</span>
+                    <span class="motto-dot">•</span>
+                    <span>RESULTADOS QUE SUMAN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('a[href="#contacto"]').forEach(boton => {
+            boton.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Primero se acerca al final para disparar las animaciones del footer
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight - 200,
+                    behavior: 'smooth'
+                });
+
+                // Luego de 150 ms llega hasta el final de la página
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>

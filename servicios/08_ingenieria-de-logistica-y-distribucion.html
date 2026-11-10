@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería de Logística y Distribución | CJ Ingeniería</title>
+    <meta name="description" content="Ordenamos el depósito, medimos el inventario y mejoramos el flujo logístico de pymes manufactureras y distribuidoras de repuestos, con herramientas Lean y de gestión MBA.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* =========================================================
+           ESTILOS ESPECÍFICOS — PÁGINA DE SERVICIO
+        ========================================================= */
+
+        /* Hero: texto a la izquierda, imagen a la derecha */
+        .service-page-hero {
+            min-height: 96vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 80px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1e40 100%);
+            color: var(--white);
+            text-align: left;
+        }
+
+        .service-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .service-hero-text { max-width: 650px; }
+
+        .service-badge {
+            display: inline-block;
+            background-color: rgba(201, 28, 34, 0.2);
+            color: #ff6b6b;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(201, 28, 34, 0.5);
+        }
+
+        .service-page-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .service-intro {
+            font-size: 1.2rem;
+            color: #aeb5c2;
+            max-width: 700px;
+            margin: 0 0 30px 0;
+            line-height: 1.6;
+        }
+
+        .btn-volver {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 10px 0 28px 0;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        /* Indicador "Conocer más" */
+        .hero-more-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-more-indicator i {
+            font-size: 0.85rem;
+            animation: heroArrow 1.8s ease-in-out infinite;
+        }
+
+        .hero-more-indicator:hover { color: #ff6b6b; }
+
+        @keyframes heroArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Imagen del hero */
+        .service-hero-image { position: relative; }
+
+        .service-hero-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-hero-image-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .service-hero-image-wrapper:hover img { transform: scale(1.05); }
+
+        /* Contenido y preguntas */
+        .service-content-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .questions-section {
+            max-width: 900px;
+            margin: 0 auto 90px auto;
+            text-align: center;
+        }
+
+        .questions-section--cta { margin: 80px auto 40px auto; }
+
+        .question-block + .question-block { margin-top: 55px; }
+
+        .question-block h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .question-block p {
+            color: var(--text-muted);
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 820px;
+        }
+
+        /* Técnicas */
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .technique-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .technique-card:nth-child(3n+1) { transition-delay: 0.1s; }
+        .technique-card:nth-child(3n+2) { transition-delay: 0.2s; }
+        .technique-card:nth-child(3n)   { transition-delay: 0.3s; }
+
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .technique-icon {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .technique-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .technique-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Botón final */
+        .cta-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .service-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .service-hero-text { max-width: 100%; }
+
+            .service-page-hero h1 { font-size: 2.5rem; }
+
+            .service-hero-image {
+                max-width: 750px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-page-hero { padding: 120px 0 60px 0; }
+
+            .service-page-hero h1 { font-size: 2.2rem; }
+
+            .service-intro { font-size: 1.05rem; }
+
+            .question-block h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo logo--custom">
+                <div class="logo-monogram-wrap">
+                    <img src="../recursos/logo_cj_monogram.png" alt="CJ Monograma" class="logo-monogram">
+                </div>
+                <div class="logo-text-wrap">
+                    <span class="logo-line-1">INGENIERÍA Y</span>
+                    <span class="logo-line-2">DISEÑO MECÁNICO</span>
+                    <div class="logo-text-sep"></div>
+                    <span class="logo-line-3">TU DEPARTAMENTO DE INGENIERÍA</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="../index.html#inicio" class="nav-link">Inicio</a>
+                <a href="../index.html#filosofia" class="nav-link">Filosofía</a>
+                <a href="../index.html#servicios" class="nav-link active">Servicios</a>
+                <a href="../index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="../index.html#planes" class="nav-link">Planes</a>
+                <a href="../index.html#proceso" class="nav-link">Proceso</a>
+                <a href="#contacto" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Contactar
+                </a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ====== HERO DEL SERVICIO ====== -->
+    <section class="service-page-hero">
+        <div class="container">
+            <div class="service-hero-grid">
+
+                <!-- Texto a la izquierda -->
+                <div class="service-hero-text" data-animate="fade-right">
+                    <a href="../index.html#servicios" class="btn-volver">
+                        <i class="fas fa-arrow-left"></i> Volver a Servicios
+                    </a>
+
+                    <span class="service-badge">Servicio 08</span>
+
+                    <h1>Ingeniería de Logística y Distribución</h1>
+
+                    <p class="service-intro">
+                        Antes de ampliar el depósito o sumar más stock, recuperá lo que hoy se pierde en él. Ordenamos
+                        el espacio, medimos el inventario y ayudamos a reducir esperas, errores de despacho y capital
+                        inmovilizado, con herramientas Lean y de gestión MBA.
+                    </p>
+
+                    <a href="#preguntas" class="hero-more-indicator">
+                        <span>Conocer más</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <!-- Imagen a la derecha -->
+                <div class="service-hero-image" data-animate="fade-left">
+                    <div class="service-hero-image-wrapper">
+                        <img src="../recursos/logistica_y_distribucion.jpg" alt="Ingeniería de procesos logísticos y de distribución">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTENIDO DEL SERVICIO ====== -->
+    <section class="service-content-section" id="preguntas">
+        <div class="container">
+
+            <!-- Preguntas -->
+            <div class="questions-section" data-animate="fade-up">
+
+                <div class="question-block">
+                    <h2>¿Qué es la Ingeniería de Logística y Distribución?</h2>
+                    <p>
+                        Es la aplicación de herramientas Lean y de gestión MBA al flujo de materiales, al inventario y
+                        a los costos de un depósito, desde la recepción hasta el despacho. Está pensada para pymes
+                        manufactureras y distribuidoras de repuestos.
+                    </p>
+                </div>
+
+                <div class="question-block">
+                    <h2>¿Por qué es importante para tu empresa?</h2>
+                    <p>
+                        Un depósito desordenado o con inventario poco confiable genera faltantes, compras innecesarias,
+                        pedidos demorados y capital inmovilizado. Ordenar el flujo y medirlo con indicadores ayuda a
+                        mejorar el nivel de servicio, reducir costos logísticos y decidir con datos.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Metodología -->
+            <div class="section-header" data-animate="fade-up">
+                <div class="section-label">Metodología</div>
+                <h2 class="section-title">Técnicas que usamos en nuestros planes</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="techniques-grid">
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-magnifying-glass-chart technique-icon"></i>
+                    <h3>Gemba Walk y Mapeo de Desperdicios</h3>
+                    <p>
+                        Recorremos recepción, almacenes, picking, embalaje y despacho para observar esperas, movimientos y errores. Clasificamos los desperdicios del depósito y definimos una línea base para priorizar las mejoras de alto impacto y bajo esfuerzo.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-people-group technique-icon"></i>
+                    <h3>Gestión del Cambio</h3>
+                    <p>
+                        Acompañamos al personal del depósito durante todo el proceso: explicamos qué cambia y por qué, atendemos la resistencia desde el inicio y trabajamos para que los nuevos hábitos se sostengan cuando termina el acompañamiento.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-broom technique-icon"></i>
+                    <h3>Ordenamiento 3S y Rotación FIFO / FEFO</h3>
+                    <p>
+                        Seleccionamos, ordenamos y limpiamos pasillos, estanterías, picking y muelles, con un lugar rotulado para cada código. Definimos la rotación FIFO o FEFO según el producto, para ayudar a reducir búsquedas, vencimientos y mercadería olvidada.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-boxes-stacked technique-icon"></i>
+                    <h3>Clasificación ABC y Exactitud de Inventario</h3>
+                    <p>
+                        Clasificamos el inventario por valor y rotación para enfocar el control donde más impacta, y medimos el capital inmovilizado para decidir qué depurar. Instalamos conteos cíclicos y analizamos la causa de cada diferencia entre el stock físico y el del sistema.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-shield-alt technique-icon"></i>
+                    <h3>Estandarización y Poka-yoke</h3>
+                    <p>
+                        Documentamos los procedimientos de recepción, ubicación, picking, embalaje y despacho, y sumamos controles a prueba de error, como validación por código de barras o listas de chequeo de carga, para ayudar a reducir errores de armado y despacho.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-tags technique-icon"></i>
+                    <h3>Kanban y Punto de Reposición (ROP)</h3>
+                    <p>
+                        Para los códigos críticos definimos niveles mínimo y máximo, señales visuales o tarjetas Kanban y puntos de reposición con stock de seguridad. Así se repone según el consumo real, para ayudar a reducir faltantes y compras de urgencia.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-project-diagram technique-icon"></i>
+                    <h3>VSM Logístico y Kaizen de Flujo</h3>
+                    <p>
+                        Mapeamos el flujo completo, desde la orden al proveedor hasta el destino final, y ubicamos los cuellos de botella más costosos. Los abordamos con talleres de mejora y relacionamos el resultado con el margen o el costo de servicio por ruta, cliente o destino.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-gears technique-icon"></i>
+                    <h3>Procesos Administrativos, Costeo ABC y SLA</h3>
+                    <p>
+                        Mapeamos con Makigami los flujos de información entre Compras, Almacén, Facturación y transportistas para detectar burocracia y cargas duplicadas. Asignamos los costos a las actividades reales (costeo ABC) y acordamos niveles de servicio medibles entre sectores.
+                    </p>
+                </div>
+
+                <div class="technique-card" data-animate="fade-up">
+                    <i class="fas fa-chart-line technique-icon"></i>
+                    <h3>Tablero de KPIs, Kamishibai y ROI</h3>
+                    <p>
+                        Seguimos días de stock, nivel de servicio, exactitud de inventario y costo logístico en un tablero. Sostenemos los estándares con auditorías cortas Kamishibai y reuniones diarias de pie, y medimos el retorno contra la línea base inicial.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Cierre: consulta o planes -->
+            <div class="questions-section questions-section--cta" data-animate="fade-up">
+                <div class="question-block">
+                    <h2>¿Cómo implementamos este servicio en tu empresa?</h2>
+                    <p>
+                        Diseñamos planes flexibles y progresivos que se adaptan a la medida de tu depósito. Conocé la
+                        Modalidad Inicial y la Avanzada para transformar tu logística paso a paso.
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a href="../index.html#planes-logistica" class="btn-hero-primary">
+                        Conocé nuestros Planes <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer id="contacto" class="footer footer--full">
+        <div class="footer-top">
+            <div class="container footer-top-grid">
+                <div class="footer-brand" data-animate="fade-left">
+                    <div class="footer-logo-block">
+                        <img src="../recursos/logo portada horizontal.png" alt="CJ Ingeniería y Diseño Mecánico" class="logo-img logo-img--footer">
+                    </div>
+                    <p class="footer-tagline">
+                        ¿TU DEPÓSITO TIENE STOCK QUE NO COINCIDE, PEDIDOS QUE SALEN TARDE O CAPITAL PARADO EN MERCADERÍA?<br>
+                        Contanos cómo trabaja hoy tu depósito y evaluamos por dónde empezar.
+                    </p>
+                    <p class="footer-cta-text">
+                        CONSULTANOS Y ARMEMOS JUNTOS EL MEJOR PLAN PARA TU EMPRESA.
+                    </p>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-crosshairs"></i> Precisión</span>
+                        <span><i class="fas fa-tools"></i> Soluciones a Medida</span>
+                        <span><i class="fas fa-trophy"></i> Resultados que Suman</span>
+                    </div>
+                    <div class="footer-tags">
+                        <span><i class="fas fa-chart-line"></i> Técnicas MBA</span>
+                        <span><i class="fas fa-industry"></i> Lean Manufacturing</span>
+                        <span><i class="fas fa-cubes"></i> Diseño 3D &amp; FEA</span>
+                        <span><i class="fas fa-handshake"></i> Planes Flexibles</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact-block" data-animate="fade-right">
+                    <h4>CONTACTO DIRECTO</h4>
+                    <div class="footer-contact-card">
+                        <div class="footer-contact-person">
+                            <div class="person-avatar"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <strong>Ing. Carlos J. Sosa</strong>
+                                <span>Ingeniero Mecánico</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/543564595190?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20Ingenier%C3%ADa%20de%20Log%C3%ADstica%20y%20Distribuci%C3%B3n." target="_blank" rel="noopener" id="btn-whatsapp" class="footer-contact-item footer-contact-item--wa">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+54 3564 595190</span>
+                            </div>
+                        </a>
+                        <a href="tel:+543564595190" id="btn-phone" class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+54 - 3564 - 595190</span>
+                            </div>
+                        </a>
+                        <a href="mailto:cjrsosa@hotmail.com" id="btn-email" class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>cjrsosa@hotmail.com</span>
+                            </div>
+                        </a>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Alem 655 · San Francisco, Córdoba, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-bar">
+                <span class="footer-copy">&copy; 2026 CJ Ingeniería y Diseño Mecánico. Todos los derechos reservados.</span>
+                <div class="footer-motto">
+                    <span>PRECISIÓN</span>
+                    <span class="motto-dot">•</span>
+                    <span>SOLUCIONES A MEDIDA</span>
+                    <span class="motto-dot">•</span>
+                    <span>RESULTADOS QUE SUMAN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('a[href="#contacto"]').forEach(boton => {
+            boton.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Primero se acerca al final para disparar las animaciones del footer
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight - 200,
+                    behavior: 'smooth'
+                });
+
+                // Luego de 150 ms llega hasta el final de la página
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
