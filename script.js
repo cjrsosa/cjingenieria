@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const headerOffset = navbar.offsetHeight + 10;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
 
             window.scrollTo({ top, behavior: 'smooth' });
         });
@@ -55,10 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ── Active nav link on scroll ────────────────────────────
-    const sections  = document.querySelectorAll('section[id], footer[id]');
-    const navLinkEls = document.querySelectorAll('.nav-link');
+    // Solo aplica en el index, donde los enlaces del menú son anclas (#seccion).
+    // En las subpáginas los enlaces apuntan a ../index.html#..., por lo que
+    // se conserva el "Servicios" marcado en el HTML.
+    const sections   = document.querySelectorAll('section[id], footer[id]');
+    const navLinkEls = document.querySelectorAll('.nav-link[href^="#"]');
 
     function updateActiveNavLink() {
+        if (!navLinkEls.length) return;
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - navbar.offsetHeight - 80;
@@ -67,10 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         navLinkEls.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
+            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
         });
     }
 
@@ -116,10 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ── Service card hover: icon colour transition ───────────
-    // (handled via CSS, no extra JS needed)
-
-
     // ── Pricing card: ripple on button click ─────────────────
     document.querySelectorAll('.btn-plan-primary, .btn-plan-outline, .btn-primary, .btn-hero-primary').forEach(btn => {
         btn.addEventListener('click', function (e) {
@@ -155,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ── WhatsApp button ───────────────────────────────────────
-    // Make sure the whatsapp CTA opens correctly
     const waLinks = document.querySelectorAll('a[href*="wa.me"]');
     waLinks.forEach(link => {
         link.setAttribute('rel', 'noopener noreferrer');
